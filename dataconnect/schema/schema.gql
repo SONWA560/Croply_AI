@@ -1,0 +1,46 @@
+type User @table {
+  email: String!
+  displayName: String!
+  createdAt: Timestamp!
+  phoneNumber: String
+  farmName: String
+  location: String
+}
+
+type Farm @table {
+  user: User!
+  name: String!
+  location: String!
+  createdAt: Timestamp!
+  sizeAcres: Float
+}
+
+type Field @table {
+  farm: Farm!
+  name: String!
+  cropType: String!
+  plantedDate: Date!
+  createdAt: Timestamp!
+  sizeAcres: Float
+  lastHarvestDate: Date
+}
+
+type CropHealthAnalysis @table {
+  field: Field!
+  analysisDate: Date!
+  status: String!
+  createdAt: Timestamp!
+  issuesIdentified: String
+  recommendations: String
+  imageUrl: String
+}
+
+type Treatment @table {
+  field: Field!
+  type: String!
+  applicationDate: Date!
+  createdAt: Timestamp!
+  productUsed: String
+  quantity: String
+  notes: String
+}

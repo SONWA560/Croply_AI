@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "491035289469",
+    "project_id": "croplyai",
+    "storage_bucket": "croplyai.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:491035289469:android:b5a9688b8cfe2cf2a34e14",
+        "android_client_info": {
+          "package_name": "com.croply.croplyai"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkMiJLlsnr9FWwvbdYYElLQIwnzham7cY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:491035289469:android:8f112816850a19e5a34e14",
+        "android_client_info": {
+          "package_name": "com.example.croply_ai"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkMiJLlsnr9FWwvbdYYElLQIwnzham7cY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

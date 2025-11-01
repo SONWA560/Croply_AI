@@ -1,0 +1,102 @@
+mutation CreateSeedData @auth(level: PUBLIC, insecureReason: "This mutation is intended for seeding data and does not require authentication.") {
+  user_insertMany(data: [
+    {
+      id: "550e8400-e29b-41d4-a716-446655440000",
+      displayName: "Demo User 1",
+      email: "demo1@example.com",
+      createdAt: "2024-01-01T00:00:00Z",
+      location: "Some Location",
+      phoneNumber: "123-456-7890",
+      farmName: "Demo Farm 1"
+    },
+    {
+      id: "550e8400-e29b-41d4-a716-446655440001",
+      displayName: "Demo User 2",
+      email: "demo2@example.com",
+      createdAt: "2024-01-02T00:00:00Z",
+      location: "Another Location",
+      phoneNumber: "098-765-4321",
+      farmName: "Demo Farm 2"
+    }
+  ])
+  farm_insertMany(data: [
+    {
+      id: "650e8400-e29b-41d4-a716-446655440000",
+      userId: "550e8400-e29b-41d4-a716-446655440000",
+      createdAt: "2024-01-03T00:00:00Z",
+      location: "Farm Location 1",
+      name: "Farm 1",
+      sizeAcres: 100.0
+    },
+    {
+      id: "650e8400-e29b-41d4-a716-446655440001",
+      userId: "550e8400-e29b-41d4-a716-446655440001",
+      createdAt: "2024-01-04T00:00:00Z",
+      location: "Farm Location 2",
+      name: "Farm 2",
+      sizeAcres: 200.0
+    }
+  ])
+  field_insertMany(data: [
+    {
+      id: "750e8400-e29b-41d4-a716-446655440000",
+      farmId: "650e8400-e29b-41d4-a716-446655440000",
+      createdAt: "2024-01-05T00:00:00Z",
+      cropType: "Wheat",
+      plantedDate: "2023-09-01",
+      name: "Field 1",
+      sizeAcres: 50.0
+    },
+    {
+      id: "750e8400-e29b-41d4-a716-446655440001",
+      farmId: "650e8400-e29b-41d4-a716-446655440001",
+      createdAt: "2024-01-06T00:00:00Z",
+      cropType: "Corn",
+      plantedDate: "2023-10-01",
+      name: "Field 2",
+      sizeAcres: 75.0
+    }
+  ])
+  cropHealthAnalysis_insertMany(data: [
+    {
+      id: "850e8400-e29b-41d4-a716-446655440000",
+      fieldId: "750e8400-e29b-41d4-a716-446655440000",
+      analysisDate: "2024-01-07",
+      createdAt: "2024-01-07T00:00:00Z",
+      status: "Healthy",
+      issuesIdentified: "None",
+      recommendations: "None"
+    },
+    {
+      id: "850e8400-e29b-41d4-a716-446655440001",
+      fieldId: "750e8400-e29b-41d4-a716-446655440001",
+      analysisDate: "2024-01-08",
+      createdAt: "2024-01-08T00:00:00Z",
+      status: "Needs Attention",
+      issuesIdentified: "Possible nutrient deficiency",
+      recommendations: "Soil test recommended"
+    }
+  ])
+    treatment_insertMany(data: [
+    {
+      id: "950e8400-e29b-41d4-a716-446655440000",
+      fieldId: "750e8400-e29b-41d4-a716-446655440000",
+      applicationDate: "2024-01-09",
+      createdAt: "2024-01-09T00:00:00Z",
+      type: "Fertilizer",
+      productUsed: "Nitrogen Fertilizer",
+      quantity: "50 lbs",
+      notes: "Applied to address nutrient deficiency"
+    },
+    {
+      id: "950e8400-e29b-41d4-a716-446655440001",
+      fieldId: "750e8400-e29b-41d4-a716-446655440001",
+      applicationDate: "2024-01-10",
+      createdAt: "2024-01-10T00:00:00Z",
+      type: "Pesticide",
+      productUsed: "Insecticide X",
+      quantity: "1 gallon",
+      notes: "Applied to control insect infestation"
+    }
+  ])
+}

@@ -1,0 +1,28 @@
+{
+  "functions": {
+    "source": "functions"
+  },
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "croplyai",
+          "appId": "1:491035289469:android:8f112816850a19e5a34e14",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "croplyai",
+          "configurations": {
+            "android": "1:491035289469:android:8f112816850a19e5a34e14",
+            "ios": "1:491035289469:ios:4245dbb4eed9aa23a34e14",
+            "macos": "1:491035289469:ios:4245dbb4eed9aa23a34e14",
+            "web": "1:491035289469:web:fb19f093bab88be2a34e14",
+            "windows": "1:491035289469:web:ff2b1e0af381710ba34e14"
+          }
+        }
+      }
+    }
+  }
+}

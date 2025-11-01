@@ -1,0 +1,61 @@
+name: croply_ai
+description: Croply AI app
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  firebase_core: ^3.8.0
+  firebase_auth: ^5.3.0
+  cupertino_icons: ^1.0.5
+  flutter_svg: ^2.1.0
+  image_picker: ^1.1.0
+  dotted_border: ^3.1.0
+  cloud_firestore: ^5.5.0
+  firebase_storage: ^12.3.0
+  firebase_data_connect: ^0.1.5+4
+  tflite_flutter: ^0.11.0
+  # tflite_flutter_helper removed because its transitive dependency on
+  # `image ^3.x` conflicts with the project's `image ^4.x` requirement.
+  # We can perform preprocessing using `package:image` directly or add
+  # a compatible helper version later if available.
+  image: ^4.0.17
+  path_provider: ^2.1.0
+  camera: ^0.11.3
+  lottie: ^3.1.0
+  shared_preferences: ^2.2.2
+  material_design_icons_flutter: ^7.0.7296
+  http: ^1.1.0
+  intl: ^0.20.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/croply_ai_logo.jpg
+    - assets/models/Pest_Detection_Model_saved_model/Pest_Detection_Model_int8.tflite
+    - assets/models/Plant_Growth_Stage_Model_saved_model/Plant_Growth_Stage_Model_int8.tflite
+    - assets/models/Disease_Detection_Model.tflite
+    - assets/models/Pest_Detection_Model_saved_model/Pest_Detection_Model_int8_labels.txt
+    - assets/models/Plant_Growth_Stage_Model_saved_model/Plant_Growth_Stage_Model_int8_labels.txt
+    - assets/models/Disease_Detection_Model_labels.txt
+
+# (Optional) If you want to generate launcher icons, add a compatible
+# flutter_launcher_icons version later and a flutter_icons section here.
+# Example (check compatibility with your 'image' package):
+# dev_dependencies:
+#   flutter_launcher_icons: ^0.12.0
+# flutter_icons:
+#   android: true
+#   ios: true
+#   image_path: assets/images/Croply_Resized.png
+
+

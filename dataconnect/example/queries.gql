@@ -1,0 +1,47 @@
+mutation CreateUser($displayName: String!, $email: String!, $farmName: String, $location: String, $phoneNumber: String) @auth(level: USER) {
+  user_insert(data: {displayName: $displayName, email: $email, farmName: $farmName, location: $location, phoneNumber: $phoneNumber, createdAt_expr: "request.time"})
+}
+
+query GetMyFarms @auth(level: USER) {
+  farms(where: {userId: {eq_expr: "auth.uid"}}) {
+    id
+    name
+    location
+    sizeAcres
+  }
+}
+
+mutation CreateField($farmId: UUID!, $name: String!, $cropType: String!, $plantedDate: Date!, $lastHarvestDate: Date, $sizeAcres: Float) @auth(level: USER) {
+  field_insert(data: {farmId: $farmId, name: $name, cropType: $cropType, plantedDate: $plantedDate, lastHarvestDate: $lastHarvestDate, sizeAcres: $sizeAcres, createdAt_expr: "request.time"})
+}
+
+query GetFieldDetails($id: UUID!) @auth(level: USER) {
+  field(id: $id) {
+    id
+    name
+    cropType
+    plantedDate
+    lastHarvestDate
+    sizeAcres
+    farm {
+      id
+      name
+    }
+    treatments_on_field {
+      id
+      type
+      applicationDate
+      productUsed
+      quantity
+      notes
+    }
+    cropHealthAnalyses_on_field {
+      id
+      analysisDate
+      imageUrl
+      issuesIdentified
+      recommendations
+      status
+    }
+  }
+}
