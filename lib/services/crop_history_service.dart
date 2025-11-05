@@ -5,7 +5,8 @@ import 'dart:io';
 
 class CropHistoryService {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
-  final FirebaseStorage _storage = FirebaseStorage.instance;
+  // Use specific storage bucket
+  final FirebaseStorage _storage = FirebaseStorage.instanceFor(bucket: 'gs://croplyai.firebasestorage.app');
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
   // Get current user ID
