@@ -43,3 +43,25 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Firebase related
+firebase.json
+.firebaserc
+firestore.rules
+storage.rules
+firestore.indexes.json
+
+# Firebase service account keys
+**/service-account-key.json
+**/google-services.json
+**/GoogleService-Info.plist
+# Model files (large binaries)
+assets/models/**/*.tflite
+assets/models/**/*.onnx
+assets/models/**/*.pt
+assets/models/**/*.pb
+# Build artifacts
+share/
+windows/
+linux/
+bin/
